@@ -1,0 +1,125 @@
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  min-width: 350px;
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.notification-container.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification-container.hide {
+  transform: translateX(400px);
+  opacity: 0;
+}
+
+.notification-alert {
+  background: linear-gradient(135deg, #151515 0%, #1a1a2e 100%);
+  border: 1px solid #00bfff;
+  border-radius: 15px;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-icon {
+  color: #00bfff;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.notification-text {
+  flex: 1;
+}
+
+.notification-text strong {
+  color: #00bfff;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-info span:first-child {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.quantity {
+  background: #00bfff;
+  color: white;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.notification-text small {
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+.notification-cart-icon {
+  color: #00bfff;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.notification-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+}
+
+.notification-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00bfff, #007bff);
+  border-radius: 0 0 15px 15px;
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.notification-alert::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00bfff, transparent);
+}
+

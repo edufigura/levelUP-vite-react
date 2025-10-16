@@ -1,0 +1,247 @@
+/* Perfil.css */
+.perfil-simple-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 0;
+}
+
+.perfil-simple-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.perfil-simple-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-simple-avatar {
+  margin-bottom: 20px;
+}
+
+.perfil-simple-avatar svg {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.perfil-simple-name {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.perfil-simple-btn-edit {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.perfil-simple-btn-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  color: white;
+}
+
+.perfil-simple-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.perfil-simple-title {
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.perfil-simple-edit-btn {
+  background: linear-gradient(135deg, #ffd89b, #19547b);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.perfil-simple-edit-btn:hover {
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.perfil-simple-input {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.perfil-simple-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  background: white;
+}
+
+.perfil-simple-input:disabled {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  color: #6c757d;
+}
+
+.perfil-simple-btn-save {
+  background: linear-gradient(135deg, #56ab2f, #a8e6cf);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(86, 171, 47, 0.4);
+}
+
+.perfil-simple-btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(86, 171, 47, 0.6);
+  background: linear-gradient(135deg, #a8e6cf, #56ab2f);
+  color: white;
+}
+
+.perfil-simple-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.perfil-simple-tag {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.perfil-simple-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.perfil-simple-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.perfil-simple-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .perfil-simple-container {
+    padding: 10px;
+  }
+  
+  .perfil-simple-card {
+    margin-bottom: 20px;
+  }
+  
+  .perfil-simple-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .perfil-simple-tags {
+    justify-content: center;
+  }
+  
+  .perfil-simple-name {
+    font-size: 1.1rem;
+  }
+}
+
+/* Scroll personalizado */
+.perfil-simple-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.perfil-simple-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.perfil-simple-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+.perfil-simple-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+/* Estilos para el textarea */
+.perfil-simple-input[as="textarea"] {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Estilos para los placeholders */
+.perfil-simple-input::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Efectos de hover para las tarjetas */
+.perfil-simple-card .card-body {
+  padding: 30px;
+}
+
+/* Mejora para los botones en móviles */
+@media (max-width: 576px) {
+  .perfil-simple-btn-edit,
+  .perfil-simple-btn-save {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .perfil-simple-card .card-body {
+    padding: 20px;
+  }
+}

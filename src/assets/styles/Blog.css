@@ -1,0 +1,57 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1d2c50 0%, #24132a 100%);
+    color: #fff;
+    padding-top: 70px;
+}
+
+
+
+.brand-text {
+    background: linear-gradient(90deg, #1E90FF, #6e14ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+}
+
+
+.btn-accent {
+    background: linear-gradient(90deg, #1E90FF, #a914ff);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-accent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #621eff;
+}
+
+
+
+
+.footer {
+    color: #474747;
+}
+
+.custom-cart {
+    color: #474747;
+    transition: color 0.3s ease;
+}
+
+.custom-cart:hover {
+    color: #fff;
+
+}
+
+.custom {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.custom:hover {
+    color: #fff;
+}

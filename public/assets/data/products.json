@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "nombre": "PlayStation 5",
+    "descripcion": "Consola PlayStation 5 version Slim con 1GB SSD para jugar GHD",
+    "precio": 549990,
+    "categoria": "electronica",
+    "imagen": "/assets/productos/PS5-CARD.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Silla Gamer Titan", 
+    "descripcion": "Silla gamer robada de un auto de carreras ideal si quieres ser 'El jorobado de Notre Dame'",
+    "precio": 349990,
+    "categoria": "accesorios",
+    "imagen": "/assets/productos/silla-card.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Estrella de la Muerte",
+    "descripcion": "Se le cayo al edu",
+    "precio": 699990,
+    "categoria": "accesorios",
+    "imagen": "STAR-WARS-CARD.png"
+  },
+    {
+    "id": 4,
+    "nombre": "LEGO Hernan Edition",
+    "descripcion": "Colaboracion LEGO con Hernan Saavedra LIMITED",
+    "precio": 699990,
+    "categoria": "accesorios",
+    "imagen": "/assets/productos/lego-card.png"
+  },
+    {
+    "id": 5,
+    "nombre": "Catan",
+    "descripcion": "Juego de mesa 2-4 Jugadores ",
+    "precio": 29990,
+    "categoria": "Juegos",
+    "imagen": "/assets/productos/catan-card.png"
+  },
+      {
+    "id": 6,
+    "nombre": "Carcassonme",
+    "descripcion": "Juego de mesa 2-8 Jugadores ",
+    "precio": 24990,
+    "categoria": "Juegos",
+    "imagen": "/assets/productos/carcasonme-card.png"
+  },
+    {
+    "id": 8,
+    "nombre": "Mando XBOX SERIES S White",
+    "descripcion": "Mando inalambrico XBOX SERIES X White Edition",
+    "precio": 60990,
+    "categoria": "electronica",
+    "imagen": "/assets/productos/xboxmando-card.png"
+  },
+    {
+    "id": 9,
+    "nombre": "Audifonos HyperX Cloud II",
+    "descripcion": "audifonos con lucesitas y ruido ",
+    "precio": 79990,
+    "categoria": "electronica",
+    "imagen": "/assets/productos/hyperXau-card.png"
+  },
+    {
+    "id": 10,
+    "nombre": "PC Gamer ASUS ROG Strix",
+    "descripcion": "PC GAMER con lucesitas y mas accesorios con luces",
+    "precio": 1299990,
+    "categoria": "electronica",
+    "imagen": "/assets/productos/PCGAMERROG-CARD.png"
+  },
+    {
+    "id": 11,
+    "nombre": "Polera Gamer LEVELUP",
+    "descripcion": "Polera con estampado barato LEVELUP",
+    "precio": 14990,
+    "categoria": "ropa",
+    "imagen": "/assets/productos/polera-levelup.png"
+  },
+  {
+    "id": 12,
+    "nombre": "Grand Hernan DuocUC",
+    "descripcion": "La gran franquicia Hernstar saca oficialmente su Juego Mundo abierto.. Profesor de dia... Mafioso de noche",
+    "precio": 1200000,
+    "categoria": "Exclusivo",
+    "imagen": "/assets/productos/hernan-card.png"
+  }
+]

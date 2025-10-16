@@ -1,0 +1,141 @@
+.footer {
+  background: linear-gradient(135deg, #0a0a0a 0%, #151522 100%);
+  padding: 60px 0 30px;
+  border-top: 1px solid #222;
+  color: #ccc;
+}
+
+.footer-content {
+  margin-bottom: 3rem;
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+.footer-title {
+  color: #00bfff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-subtitle {
+  color: #00bfff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.footer-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(135deg, #007bff 0%, #00bfff 100%);
+}
+
+.footer-description {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #999;
+}
+
+.footer-contact-info {
+  margin-top: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.contact-item svg {
+  color: #00bfff;
+  width: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 0;
+  transition: padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00bfff;
+  padding-left: 8px;
+}
+
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: -12px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #00bfff;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+  left: -8px;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.footer-copyright {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-credits {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.payment-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.payment-icon {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
