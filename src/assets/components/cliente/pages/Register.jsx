@@ -13,26 +13,75 @@ function Register() {
     aceptaTerminos: false
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
+    // Limpiar error del campo al escribir
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const isValidDate = (dateString) => {
+    const date = new Date(dateString);
+    return date instanceof Date && !isNaN(date);
+  };
+
+  const isAdult = (dateString) => {
+    const birthDate = new Date(dateString);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age >= 18;
+  };
+
+  const isFutureDate = (dateString) => {
+    const date = new Date(dateString);
+    const today = new Date();
+    return date > today;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    const newErrors = {};
+
+    // Validar que la fecha no esté vacía
+    if (!formData.fechaNacimiento) {
+      newErrors.fechaNacimiento = 'La fecha de nacimiento es requerida';
+    } else if (!isValidDate(formData.fechaNacimiento)) {
+      newErrors.fechaNacimiento = 'Por favor ingresa una fecha válida';
+    } else if (isFutureDate(formData.fechaNacimiento)) {
+      newErrors.fechaNacimiento = 'La fecha de nacimiento no puede ser en el futuro';
+    } else if (!isAdult(formData.fechaNacimiento)) {
+      newErrors.fechaNacimiento = 'Debes ser mayor de 18 años para registrarte';
+    }
+
     // Validación de contraseñas
     if (formData.password !== formData.confirmPassword) {
-      alert('Las contraseñas no coinciden');
-      return;
+      newErrors.password = 'Las contraseñas no coinciden';
     }
 
     // Validación de términos
     if (!formData.aceptaTerminos) {
-      alert('Debes aceptar los términos y condiciones');
+      newErrors.aceptaTerminos = 'Debes aceptar los términos y condiciones';
+    }
+
+    // Si hay errores, mostrarlos
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
@@ -47,10 +96,10 @@ function Register() {
     // Redirigir según el tipo de usuario
     if (isAdmin) {
       alert('¡Cuenta de administrador creada con éxito!');
-      navigate('/perfil'); // Ruta del dashboard de admin
+      navigate('/perfil');
     } else {
       alert('¡Cuenta creada con éxito!');
-      navigate('/'); // Ruta para usuarios normales
+      navigate('/');
     }
   };
 
@@ -117,10 +166,14 @@ function Register() {
                 name="fechaNacimiento"
                 value={formData.fechaNacimiento}
                 onChange={handleChange}
-                required
-                className="login-input"
+                className={`login-input ${errors.fechaNacimiento ? 'is-invalid' : ''}`}
                 placeholder="dd-mm-aaaa"
               />
+              {errors.fechaNacimiento && (
+                <div className="login-error-message">
+                  {errors.fechaNacimiento}
+                </div>
+              )}
             </Form.Group>
 
             {/* Contraseñas en dos columnas */}
@@ -152,9 +205,14 @@ function Register() {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     required
-                    className="login-input"
+                    className={`login-input ${errors.password ? 'is-invalid' : ''}`}
                     placeholder="••••••••"
                   />
+                  {errors.password && (
+                    <div className="login-error-message">
+                      {errors.password}
+                    </div>
+                  )}
                 </Form.Group>
               </Col>
             </Row>
@@ -166,13 +224,12 @@ function Register() {
                 name="aceptaTerminos"
                 checked={formData.aceptaTerminos}
                 onChange={handleChange}
-                required
                 label={
                   <span style={{ color: '#797979ff', fontSize: '13px' }}>
                     ✅ Acepto los{' '}
                     <a 
                       href="/terminos" 
-                      style={{ color: '#1e90ff', textDecoration: 'none' }}
+                      style={{ color: '#667eea', textDecoration: 'none' }}
                       onClick={(e) => e.preventDefault()}
                     >
                       términos y condiciones
@@ -181,6 +238,11 @@ function Register() {
                 }
                 style={{ marginBottom: '10px' }}
               />
+              {errors.aceptaTerminos && (
+                <div className="login-error-message">
+                  {errors.aceptaTerminos}
+                </div>
+              )}
             </Form.Group>
 
             {/* Botón de Crear Cuenta */}
